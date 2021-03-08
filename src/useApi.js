@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+const express = require('express')
+const app = express()
+
+app.get('/health', (_req, res) => {
+  res.send('ok')
+})
 
 const useApi = (url, mapResults = (result) => result) => {
   const [data, setData] = useState()
