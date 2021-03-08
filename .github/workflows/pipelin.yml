@@ -35,5 +35,6 @@ jobs:
           heroku_email: "pauli.tapio.partanen@outlook.com"
           healthcheck: "https://fullstack-ci-cd-pokemon-app.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
           
           
