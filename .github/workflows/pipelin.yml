@@ -33,5 +33,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "fullstack-ci-cd-pokemon-app" #Must be unique in Heroku
           heroku_email: "pauli.tapio.partanen@outlook.com"
+          healthcheck: "https://fullstack-ci-cd-pokemon-app.herokuapp.com/health"
+          checkstring: "ok"
           
           
