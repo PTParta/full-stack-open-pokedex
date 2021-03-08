@@ -1,1 +1,1 @@
-web: npm run starttestitoimiiko-prod
+web: npm run start-prod
