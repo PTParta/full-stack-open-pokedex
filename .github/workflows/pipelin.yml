@@ -28,8 +28,9 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
           COMMIT_MESSAGES_CONCATENATED: join(COMMIT_MESSAGES, ;)
-        run: echo "$COMMIT_MESSAGES"
-        run: echo "$COMMIT_MESSAGES_CONCATENATED"
+        run: 
+          echo "$COMMIT_MESSAGES"
+          echo "$COMMIT_MESSAGES_CONCATENATED"
       - name: npm install
         run: npm install
       - name: lint
