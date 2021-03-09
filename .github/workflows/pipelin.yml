@@ -47,7 +47,7 @@ jobs:
           wait-on: http://localhost:5000
       - name: build
         env:
-          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+          #COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
           #COMMIT_MESSAGES_CONCATENATED: ${{join(COMMIT_MESSAGES, ;)}}
         if: ${{ github.event_name == 'push'}}
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
