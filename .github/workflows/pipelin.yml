@@ -73,7 +73,7 @@ jobs:
             {
               attachments: [{
                 color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                text: `workflow ${process.env.AS_WORKFLOW}\n job ${process.env.AS_JOB}\n commit (${process.env.AS_COMMIT})\n repo ${process.env.AS_REPO}@${process.env.AS_REF}\n author ${process.env.AS_AUTHOR}\n status ${{ job.status }}\n time ${process.env.AS_TOOK}`,
+                text: `workflow\n ${process.env.AS_WORKFLOW}\n job\n ${process.env.AS_JOB}\n commit\n (${process.env.AS_COMMIT})\n repo\n ${process.env.AS_REPO}@${process.env.AS_REF}\n author\n ${process.env.AS_AUTHOR}\n status\n ${{ job.status }}\n time\n ${process.env.AS_TOOK}`,
               }]
             }
         env:
