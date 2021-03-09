@@ -27,7 +27,9 @@ jobs:
       - name: commit messages
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+          COMMIT_MESSAGES_CONCATENATED: join(COMMIT_MESSAGES, ;)
         run: echo "$COMMIT_MESSAGES"
+        run: echo "$COMMIT_MESSAGES_CONCATENATED"
       - name: npm install
         run: npm install
       - name: lint
@@ -46,7 +48,7 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
           COMMIT_MESSAGES_CONCATENATED: join(COMMIT_MESSAGES, ;)
-        if: ${{ github.event_name == 'push' && !contains(COMMIT_MESSAGES_CONCATENATED)}}
+        if: ${{ github.event_name == 'push' && !contains($COMMIT_MESSAGES_CONCATENATED, "#skip")}}
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
